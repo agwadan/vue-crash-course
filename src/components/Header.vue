@@ -1,15 +1,19 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
+    <Button text="AddTask" color="green" />
   </header>
 </template>
 
 <script>
+import Button from "./Button.vue";
 export default {
   name: "Header",
   props: {
     title: String,
-    default: "Hello World",
+  },
+  components: {
+    Button,
   },
 };
 </script>
