@@ -27,9 +27,15 @@ export default {
     this.tasks = [
       {
         id: 1,
-        text: "DOctor",
+        text: "Doctor",
         day: "Today",
         reminder: true,
+      },
+      {
+        id: 1,
+        text: "Watch a movie",
+        day: "Tomorrow",
+        reminder: false,
       },
     ];
   },
