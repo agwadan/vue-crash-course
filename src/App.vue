@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Task Tracker" />
-    <Tasks :tasks="tasks" />
+    <Tasks @delete-task="deleteTask" :tasks="tasks" />
     <!-- Binding tasks to the tasks data so that it's updated whenever there's a change -->
   </div>
 </template>
@@ -23,6 +23,12 @@ export default {
     };
   },
 
+  methods: {
+    deleteTask(id) {
+      this.tasks = this.tasks.filter((task) => task.id !== id);
+    },
+  },
+
   created() {
     this.tasks = [
       {
@@ -32,9 +38,21 @@ export default {
         reminder: true,
       },
       {
-        id: 1,
+        id: 2,
         text: "Watch a movie",
         day: "Tomorrow",
+        reminder: false,
+      },
+      {
+        id: 3,
+        text: "Watch Redbull Car unveil",
+        day: "Today at 6:45pm",
+        reminder: true,
+      },
+      {
+        id: 4,
+        text: "Go Home",
+        day: "Today at 6:00pm",
         reminder: false,
       },
     ];
