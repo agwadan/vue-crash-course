@@ -13,12 +13,14 @@
       @delete-task="deleteTask"
       :tasks="tasks"
     />
+    <Footer />
     <!-- Binding tasks to the tasks data so that it's updated whenever there's a change -->
   </div>
 </template>
 
 <script>
 import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 import Tasks from "./components/Tasks.vue";
 import AddTask from "./components/AddTask.vue";
 
@@ -28,6 +30,7 @@ export default {
     Header,
     Tasks,
     AddTask,
+    Footer,
   },
 
   data() {
