@@ -55,7 +55,17 @@ export default {
       this.showAddTask = !this.showAddTask;
     },
 
-    deleteTask(id) {
+    async deleteTask(id) {
+      if (confirm("Are you sure?")) {
+        const res = await fetch(`api/tasks/${id}`, {
+          method: "DELETE",
+        });
+
+        res.status === 200
+          ? (this.tasks = this.tasks.filter((task) => task.id !== id))
+          : alert(`Error deleting task`);
+      }
+
       this.tasks = this.tasks.filter((task) => task.id !== id);
     },
 
