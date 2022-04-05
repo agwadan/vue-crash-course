@@ -13,6 +13,7 @@
       @delete-task="deleteTask"
       :tasks="tasks"
     />
+    <router-view></router-view>
     <Footer />
     <!-- Binding tasks to the tasks data so that it's updated whenever there's a change -->
   </div>
